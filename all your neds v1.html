@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="All Your Needs — Premier one-stop consulting and solutions. Home contracting, renovations, taxes, accounting, bookkeeping, consulting, and financial advice." />
+<meta name="theme-color" content="#0B0A08" />
+<meta property="og:title" content="All Your Needs — Premier Consulting & Solutions" />
+<meta property="og:description" content="One source for every solution. Contracting, renovations, taxes, accounting, consulting, and financial advice." />
+<meta property="og:type" content="website" />
+<title>All Your Needs — Premier Consulting & Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<!-- Fallback fonts if Google Fonts fails to load -->
+<style>
+  @font-face { font-family: 'Outfit'; src: local('Arial'); font-weight: 300 600; }
+</style>
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-light: #E2C87A;
+    --gold-dim: #8A6E30;
+    --dark: #0B0A08;
+    --dark2: #111008;
+    --dark3: #181610;
+    --dark4: #211F15;
+    --cream: #F4EDD8;
+    --cream-dim: #BEB49A;
+    --white: #FAFAF7;
+  }
+
+  *, *::before, *::after { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+  body {
+    background: var(--dark);
+    color: var(--cream);
+    font-family: 'Outfit', Arial, sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; top: 0; right: 0; bottom: 0; left: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 5vw;
+    background: linear-gradient(to bottom, rgba(11,10,8,0.97) 0%, transparent 100%);
+    transition: background 0.4s;
+  }
+  nav.scrolled { background: rgba(11,10,8,0.97); border-bottom: 1px solid rgba(201,168,76,0.15); }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.55rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: var(--gold-light);
+    text-decoration: none;
+  }
+  .nav-logo span { color: var(--cream); }
+
+  .nav-links { display: flex; gap: 2.2rem; list-style: none; }
+  .nav-links a {
+    color: var(--cream-dim);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold-light); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-light) !important;
+    padding: 0.5rem 1.4rem;
+    border-radius: 2px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, color 0.2s !important;
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--gold); color: var(--dark) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex; align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 0 5vw;
+  }
+
+  .hero-bg {
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,168,76,0.07) 0%, transparent 60%),
+      radial-gradient(ellipse 50% 80% at 10% 80%, rgba(201,168,76,0.04) 0%, transparent 50%),
+      linear-gradient(160deg, #0B0A08 0%, #151209 50%, #0B0A08 100%);
+  }
+
+  .hero-lines {
+    position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+    background-image:
+      repeating-linear-gradient(90deg, rgba(201,168,76,0.03) 0px, transparent 1px, transparent 80px, rgba(201,168,76,0.03) 81px);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 820px;
+    -webkit-animation: fadeUp 1s ease both;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(201,168,76,0.3);
+    padding: 0.45rem 1.2rem;
+    margin-bottom: 2.4rem;
+    border-radius: 2px;
+    -webkit-animation: fadeUp 0.9s 0.1s ease both;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+
+  .hero-h1 {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 3.4rem;
+    font-size: clamp(3.4rem, 7vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 1.6rem;
+    -webkit-animation: fadeUp 0.9s 0.2s ease both;
+    animation: fadeUp 0.9s 0.2s ease both;
+  }
+  .hero-h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--cream-dim);
+    max-width: 520px;
+    margin-bottom: 3rem;
+    -webkit-animation: fadeUp 0.9s 0.35s ease both;
+    animation: fadeUp 0.9s 0.35s ease both;
+  }
+
+  .hero-btns {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 1rem; -ms-flex-wrap: wrap; flex-wrap: wrap;
+    -webkit-animation: fadeUp 0.9s 0.5s ease both;
+    animation: fadeUp 0.9s 0.5s ease both;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--dark);
+    border: none;
+    padding: 0.95rem 2.4rem;
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition: background 0.2s, -webkit-transform 0.2s;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .btn-primary:hover { background: var(--gold-light); -webkit-transform: translateY(-2px); transform: translateY(-2px); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--cream);
+    border: 1px solid rgba(244,237,216,0.25);
+    padding: 0.95rem 2.4rem;
+    font-family: 'Outfit', Arial, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 2px;
+    text-decoration: none;
+    display: inline-block;
+    -webkit-transition: border-color 0.2s, color 0.2s, -webkit-transform 0.2s;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+  .btn-ghost:hover { border-color: var(--gold); color: var(--gold-light); -webkit-transform: translateY(-2px); transform: translateY(-2px); }
+
+  .hero-scroll {
+    position: absolute; bottom: 2.5rem; left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+    display: -webkit-box; display: -ms-flexbox; display: flex;
+    -webkit-box-orient: vertical; -webkit-box-direction: normal;
+    -ms-flex-direction: column; flex-direction: column;
+    -webkit-box-align: center; -ms-flex-align: center; align-items: center;
+    gap: 0.5rem;
+    color: var(--gold-dim);
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    -webkit-animation: fadeUp 1s 0.8s ease both;
+    animation: fadeUp 1s 0.8s ease both;
+  }
+  .scroll-line {
+    width: 1px; height: 50px;
+    background: -webkit-linear-gradient(top, var(--gold-dim), transparent);
+    background: linear-gradient(to bottom, var(--gold-dim), transparent);
+    -webkit-animation: scrollLine 1.8s ease-in-out infinite;
+    animation: scrollLine 1.8s ease-in-out infinite;
+  }
+  @-webkit-keyframes scrollLine {
+    0%, 100% { opacity: 0.3; -webkit-transform: scaleY(1); transform: scaleY(1); }
+    50% { opacity: 1; -webkit-transform: scaleY(1.1); transform: scaleY(1.1); }
+  }
+  @keyframes scrollLine {
+    0%, 100% { opacity: 0.3; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.1); }
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 7rem 5vw; }
+
+  .section-tag {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 2.2rem;
+    font-size: clamp(2.2rem, 4vw, 3.8rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+    margin-bottom: 1.2rem;
+  }
+  .section-title em { font-style: italic; color: var(--gold-light); }
+
+  .section-body {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--cream-dim);
+    max-width: 520px;
+  }
+
+  .gold-rule {
+    width: 60px; height: 1px;
+    background: var(--gold);
+    margin: 1.8rem 0;
+  }
+
+  /* ── ABOUT ── */
+  #about {
+    background: var(--dark3);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-stat-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+
+  .about-stat {
+    background: var(--dark4);
+    padding: 2.5rem 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .about-stat:hover { background: #28250F; }
+  .about-stat::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .about-stat:hover::before { opacity: 1; }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  .stat-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+  }
+
+  /* ── SERVICES ── */
+  #services { background: var(--dark2); }
+
+  .services-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    flex-wrap: wrap; gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2px;
+  }
+
+  .service-card {
+    background: var(--dark3);
+    padding: 2.8rem 2.4rem;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: background 0.3s, transform 0.3s;
+    border-bottom: 2px solid transparent;
+  }
+  .service-card:hover {
+    background: #1C1A0E;
+    transform: translateY(-4px);
+    border-bottom-color: var(--gold);
+  }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.4rem;
+    display: block;
+    filter: grayscale(0.3);
+    transition: filter 0.3s, transform 0.3s;
+  }
+  .service-card:hover .service-icon { filter: none; transform: scale(1.1); }
+
+  .service-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.45rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.01em;
+  }
+
+  .service-desc {
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: var(--cream-dim);
+  }
+
+  .service-arrow {
+    position: absolute; bottom: 1.8rem; right: 2rem;
+    color: var(--gold-dim);
+    font-size: 1.2rem;
+    transition: color 0.2s, transform 0.2s;
+  }
+  .service-card:hover .service-arrow { color: var(--gold-light); transform: translate(4px, -4px); }
+
+  /* ── WHY US ── */
+  #why {
+    background: var(--dark3);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .why-list { list-style: none; }
+  .why-item {
+    display: flex; gap: 1.2rem;
+    padding: 1.6rem 0;
+    border-bottom: 1px solid rgba(201,168,76,0.1);
+    transition: padding-left 0.3s;
+  }
+  .why-item:hover { padding-left: 0.5rem; }
+  .why-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold);
+    min-width: 2rem;
+    padding-top: 0.1rem;
+  }
+  .why-text-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+  .why-text-body { font-size: 0.85rem; color: var(--cream-dim); line-height: 1.6; }
+
+  .why-visual {
+    position: relative;
+    height: 480px;
+  }
+  .why-box {
+    position: absolute;
+    background: var(--dark4);
+    border: 1px solid rgba(201,168,76,0.12);
+  }
+  .why-box-1 { top: 0; left: 0; right: 15%; bottom: 15%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 0.5rem; }
+  .why-box-2 { bottom: 0; right: 0; width: 55%; height: 55%; background: #1A1709; border-color: rgba(201,168,76,0.22); }
+  .why-box-big-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 300;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+  .why-box-big-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--cream-dim);
+    text-align: center;
+  }
+  .why-box-2-inner { padding: 2rem; }
+  .why-box-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.5;
+  }
+  .why-box-quote-attr { margin-top: 1rem; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--gold); }
+  .why-box-dot {
+    position: absolute; width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+  .dot-tl { top: -4px; left: -4px; }
+  .dot-br { bottom: -4px; right: -4px; }
+
+  /* ── PROCESS ── */
+  #process { background: var(--dark2); }
+
+  .process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
+    margin-top: 4rem;
+    position: relative;
+  }
+  .process-steps::before {
+    content: '';
+    position: absolute;
+    top: 2.4rem; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim), var(--gold-dim), transparent);
+    opacity: 0.4;
+  }
+
+  .process-step {
+    padding: 0 2.4rem 0 0;
+    position: relative;
+  }
+
+  .step-circle {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    color: var(--gold-light);
+    background: var(--dark2);
+    margin-bottom: 2rem;
+    position: relative; z-index: 1;
+    transition: background 0.3s;
+  }
+  .process-step:hover .step-circle { background: var(--gold); color: var(--dark); }
+
+  .step-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.6rem;
+  }
+  .step-body { font-size: 0.83rem; line-height: 1.7; color: var(--cream-dim); }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--dark3); }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    margin-top: 3.5rem;
+  }
+
+  .testimonial-card {
+    background: var(--dark4);
+    padding: 2.5rem;
+    position: relative;
+    transition: background 0.3s;
+  }
+  .testimonial-card:hover { background: #1E1C10; }
+
+  .t-stars { color: var(--gold); margin-bottom: 1.2rem; font-size: 0.85rem; letter-spacing: 0.1em; }
+
+  .t-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--cream);
+    line-height: 1.65;
+    margin-bottom: 1.5rem;
+  }
+
+  .t-name { font-size: 0.82rem; font-weight: 500; color: var(--gold-light); }
+  .t-role { font-size: 0.75rem; color: var(--cream-dim); margin-top: 0.2rem; }
+
+  .t-mark {
+    position: absolute; top: 1.5rem; right: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    color: rgba(201,168,76,0.08);
+    line-height: 1;
+    font-style: italic;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: linear-gradient(160deg, #0F0D07 0%, var(--dark3) 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  #contact::before {
+    content: '';
+    position: absolute;
+    top: -30%; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(201,168,76,0.07), transparent 65%);
+    pointer-events: none;
+  }
+
+  .contact-inner {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: start;
+  }
+
+  .contact-form {
+    display: flex; flex-direction: column; gap: 1.2rem;
+  }
+
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+  .form-group { display: flex; flex-direction: column; gap: 0.45rem; }
+  .form-group label { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cream-dim); }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.18);
+    color: var(--cream);
+    padding: 0.85rem 1.1rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s, background 0.2s;
+    resize: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.04);
+  }
+  .form-group select option { background: #181610; color: var(--cream); }
+  .form-group textarea { height: 120px; }
+
+  .contact-info { padding-top: 0.5rem; }
+  .ci-item { display: flex; gap: 1rem; margin-bottom: 2rem; }
+  .ci-icon { font-size: 1.2rem; min-width: 2rem; padding-top: 0.15rem; }
+  .ci-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.2rem; }
+  .ci-value { font-size: 0.95rem; color: var(--cream); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark);
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding: 3rem 5vw 2rem;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 1.5rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    color: var(--gold-light);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+  }
+  .footer-copy { font-size: 0.75rem; color: var(--cream-dim); }
+  .footer-links { display: flex; gap: 2rem; }
+  .footer-links a { font-size: 0.75rem; color: var(--cream-dim); text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--gold-light); }
+
+  /* ── ANIMATIONS ── */
+  @-webkit-keyframes fadeUp {
+    from { opacity: 0; -webkit-transform: translateY(28px); transform: translateY(28px); }
+    to   { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0; -webkit-transform: translateY(30px); transform: translateY(30px);
+    -webkit-transition: opacity 0.7s ease, -webkit-transform 0.7s ease;
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; -webkit-transform: translateY(0); transform: translateY(0); }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    #about, #why, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .form-row { grid-template-columns: 1fr; }
+    .why-visual { display: none; }
+    .nav-links { display: none; }
+    .process-steps::before { display: none; }
+    footer { flex-direction: column; align-items: flex-start; }
+    .about-stat-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">All Your <span>Needs</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-lines"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Premier Consulting & Solutions</span>
+    <h1 class="hero-h1">One Source.<br><em>Every Solution.</em></h1>
+    <p class="hero-sub">From home contracting to financial strategy — All Your Needs is your single point of contact for expert guidance, trusted professionals, and real results.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="#contact" class="btn-ghost">Book a Consultation</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <p class="section-tag">Who We Are</p>
+    <h2 class="section-title">Built on Trust.<br><em>Driven by Results.</em></h2>
+    <div class="gold-rule"></div>
+    <p class="section-body">All Your Needs was founded on a simple belief: people deserve access to a full spectrum of professional services under one roof. We connect you with vetted experts in construction, finance, accounting, and beyond — so you never have to search again.</p>
+    <br/>
+    <p class="section-body">Whether you're renovating your home, filing your taxes, or planning your financial future, we have the right professional ready to serve you.</p>
+  </div>
+  <div class="about-stat-grid reveal">
+    <div class="about-stat">
+      <div class="stat-num">12+</div>
+      <div class="stat-label">Service Categories</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">500+</div>
+      <div class="stat-label">Clients Served</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">98%</div>
+      <div class="stat-label">Satisfaction Rate</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-num">15+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <p class="section-tag">What We Offer</p>
+      <h2 class="section-title">All Your <em>Services</em></h2>
+    </div>
+    <p style="color:var(--cream-dim);font-size:0.9rem;max-width:320px;line-height:1.75;">A complete ecosystem of professional solutions — available when you need them, delivered by experts you can trust.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <span class="service-icon">🏗️</span>
+      <div class="service-name">Home Contracting</div>
+      <p class="service-desc">Full-service home building and construction management. From foundations to finishes, we coordinate licensed contractors to bring your vision to life.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🔨</span>
+      <div class="service-name">Renovations</div>
+      <p class="service-desc">Kitchens, bathrooms, basements, and full-scale remodels. We handle the planning, permitting, and execution — you enjoy the transformation.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">📋</span>
+      <div class="service-name">Tax Services</div>
+      <p class="service-desc">Personal and business tax preparation, planning, and filing. Maximize your returns and minimize your liability with our expert tax professionals.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">📊</span>
+      <div class="service-name">Accounting</div>
+      <p class="service-desc">Comprehensive accounting solutions for individuals and businesses. Accurate, timely, and fully compliant with all regulatory requirements.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">📒</span>
+      <div class="service-name">Bookkeeping</div>
+      <p class="service-desc">Keep your finances organized and up-to-date. We manage your books so you can focus on running your business with confidence.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">💼</span>
+      <div class="service-name">Business Consulting</div>
+      <p class="service-desc">Strategic guidance for startups and established businesses alike. We help you plan, grow, and navigate challenges with proven frameworks.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">💰</span>
+      <div class="service-name">Financial Advice</div>
+      <p class="service-desc">Personalized financial planning, investment guidance, and wealth management strategies tailored to your goals and lifestyle.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+    <div class="service-card reveal">
+      <span class="service-icon">🤝</span>
+      <div class="service-name">Referral Network</div>
+      <p class="service-desc">Need something we don't directly offer? We tap into our extensive network of vetted professionals to connect you with exactly the right person.</p>
+      <span class="service-arrow">↗</span>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="reveal">
+    <p class="section-tag">Why Choose Us</p>
+    <h2 class="section-title">The <em>All Your Needs</em><br>Difference</h2>
+    <div class="gold-rule"></div>
+    <ul class="why-list">
+      <li class="why-item">
+        <span class="why-num">01</span>
+        <div>
+          <div class="why-text-title">One Relationship, Every Need</div>
+          <div class="why-text-body">Stop managing multiple vendors and contacts. We're your single point of truth for every professional service.</div>
+        </div>
+      </li>
+      <li class="why-item">
+        <span class="why-num">02</span>
+        <div>
+          <div class="why-text-title">Vetted, Trusted Professionals</div>
+          <div class="why-text-body">Every professional in our network is rigorously screened for credentials, experience, and client satisfaction.</div>
+        </div>
+      </li>
+      <li class="why-item">
+        <span class="why-num">03</span>
+        <div>
+          <div class="why-text-title">Transparent & Honest Pricing</div>
+          <div class="why-text-body">No hidden fees, no surprises. We believe in clear communication and upfront pricing every time.</div>
+        </div>
+      </li>
+      <li class="why-item">
+        <span class="why-num">04</span>
+        <div>
+          <div class="why-text-title">White-Glove Client Experience</div>
+          <div class="why-text-body">From first contact to final delivery, we are committed to making every interaction seamless and exceptional.</div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="why-visual reveal">
+    <div class="why-box why-box-1">
+      <div class="why-box-dot dot-tl"></div>
+      <div class="why-box-dot dot-br"></div>
+      <div class="why-box-big-text">100%</div>
+      <div class="why-box-big-label">Client Commitment</div>
+    </div>
+    <div class="why-box why-box-2">
+      <div class="why-box-2-inner">
+        <div class="why-box-quote">"They handled everything — our renovation, our taxes, and our business plan. Truly one stop."</div>
+        <div class="why-box-quote-attr">— M. Thompson, Small Business Owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal" style="max-width:560px;">
+    <p class="section-tag">How It Works</p>
+    <h2 class="section-title">Simple. <em>Seamless.</em> Done.</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal">
+      <div class="step-circle">1</div>
+      <div class="step-title">Book a Consultation</div>
+      <p class="step-body">Reach out online or by phone. Tell us what you need — no matter how big or small.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-circle">2</div>
+      <div class="step-title">We Assess Your Needs</div>
+      <p class="step-body">Our team reviews your situation and matches you with the right experts from our network.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-circle">3</div>
+      <div class="step-title">Receive Your Plan</div>
+      <p class="step-body">We present a clear, tailored action plan with timelines, pricing, and professional assignments.</p>
+    </div>
+    <div class="process-step reveal">
+      <div class="step-circle">4</div>
+      <div class="step-title">We Deliver</div>
+      <p class="step-body">We execute, monitor, and follow up — ensuring every service is delivered to the highest standard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto;">
+    <p class="section-tag">Client Stories</p>
+    <h2 class="section-title">What Our Clients <em>Say</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal">
+      <div class="t-mark">"</div>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">From our kitchen renovation to our corporate taxes, All Your Needs handled everything flawlessly. I can't imagine going back to juggling multiple service providers.</p>
+      <div class="t-name">Sandra & James R.</div>
+      <div class="t-role">Homeowners & Business Owners</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="t-mark">"</div>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">Their financial consulting changed how I look at my business. They spotted opportunities my old accountant missed for years. Exceptional value and service.</p>
+      <div class="t-name">Marcus D.</div>
+      <div class="t-role">Entrepreneur & Investor</div>
+    </div>
+    <div class="testimonial-card reveal">
+      <div class="t-mark">"</div>
+      <div class="t-stars">★★★★★</div>
+      <p class="t-quote">I needed a contractor, a bookkeeper, and a business consultant — all within 60 days of launching my company. All Your Needs made it happen without missing a beat.</p>
+      <div class="t-name">Priya N.</div>
+      <div class="t-role">Startup Founder</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Let's Discuss <em>Your Needs</em></h2>
+      <div class="gold-rule"></div>
+      <div class="contact-info">
+        <div class="ci-item">
+          <div class="ci-icon">📍</div>
+          <div>
+            <div class="ci-label">Location</div>
+            <div class="ci-value">Serving clients nationwide</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">📞</div>
+          <div>
+            <div class="ci-label">Phone</div>
+            <div class="ci-value">(555) 000-0000</div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">✉️</div>
+          <div>
+            <div class="ci-label">Email</div>
+            <div class="ci-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2e58475d5a4f4d415c4b5d41425b5a4741405d6e49434f4742004d4143">[email&#160;protected]</a></div>
+          </div>
+        </div>
+        <div class="ci-item">
+          <div class="ci-icon">🕐</div>
+          <div>
+            <div class="ci-label">Hours</div>
+            <div class="ci-value">Mon – Sat, 8:00 AM – 7:00 PM</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" placeholder="John"/>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" placeholder="Smith"/>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="john@example.com"/>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" placeholder="(555) 000-0000"/>
+      </div>
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select>
+          <option value="">Select a service...</option>
+          <option>Home Contracting</option>
+          <option>Renovations</option>
+          <option>Tax Services</option>
+          <option>Accounting</option>
+          <option>Bookkeeping</option>
+          <option>Business Consulting</option>
+          <option>Financial Advice</option>
+          <option>Multiple Services</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Tell Us About Your Needs</label>
+        <textarea placeholder="Briefly describe what you're looking to accomplish..."></textarea>
+      </div>
+      <button class="btn-primary" style="width:100%;text-align:center;" onclick="sendInquiry()">Send My Inquiry →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">All Your Needs</div>
+  <div class="footer-copy">© 2025 All Your Needs. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Contact form → mailto
+  function sendInquiry() {
+    var fields = document.querySelectorAll('#contact input, #contact select, #contact textarea');
+    var first = fields[0], last = fields[1], email = fields[2], phone = fields[3], service = fields[4], message = fields[5];
+    var subject = encodeURIComponent('All Your Needs Inquiry \u2013 ' + (service.value || 'General'));
+    var body = encodeURIComponent(
+      'Name: ' + first.value + ' ' + last.value + '\nEmail: ' + email.value + '\nPhone: ' + phone.value + '\nService: ' + service.value + '\n\nMessage:\n' + message.value
+    );
+    window.location.href = 'mailto:vistacoresolutions@gmail.com?subject=' + subject + '&body=' + body;
+  }
+
+  // Navbar scroll effect
+  var nav = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 60 || window.pageYOffset > 60) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  });
+
+  // Smooth scroll for anchor links (Safari fallback)
+  document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+    anchor.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Scroll reveal with IntersectionObserver + fallback for older browsers
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) { e.target.classList.add('visible'); }
+      });
+    }, { threshold: 0.12 });
