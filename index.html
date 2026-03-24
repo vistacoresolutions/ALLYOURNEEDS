@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0"/>
+<meta name="description" content="All Your Needs — Premier one-stop consulting and solutions. Home contracting, renovations, taxes, accounting, bookkeeping, consulting, and financial advice." />
+<meta name="theme-color" content="#050D1A" />
+<meta property="og:title" content="All Your Needs — Premier Consulting & Solutions" />
+<meta property="og:description" content="One source for every solution. Contracting, renovations, taxes, accounting, consulting, and financial advice." />
+<meta property="og:type" content="website" />
+<title>All Your Needs — Premier Consulting & Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --navy:       #050D1A;
+  --navy2:      #071322;
+  --navy3:      #0A1C30;
+  --navy4:      #0D2240;
+  --navy5:      #112850;
+  --teal:       #00C9B1;
+  --teal-dim:   #00A896;
+  --teal-glow:  rgba(0,201,177,0.18);
+  --teal-line:  rgba(0,201,177,0.3);
+  --gold:       #D4AF6A;
+  --gold-light: #EDD38A;
+  --white:      #F0F6FF;
+  --mist:       #B8CDE0;
+  --mist-dim:   #7A9AB8;
+}
+*, *::before, *::after { -webkit-box-sizing:border-box; box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; -webkit-text-size-adjust:100%; }
+body {
+  background:var(--navy); color:var(--white);
+  font-family:'Raleway',Arial,sans-serif; font-weight:300;
+  overflow-x:hidden; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+body::before {
+  content:''; position:fixed; top:0;right:0;bottom:0;left:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity:0.025; pointer-events:none; z-index:9999;
+}
+nav {
+  position:fixed; top:0;left:0;right:0; z-index:100;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:1.4rem 5vw;
+  background:linear-gradient(to bottom,rgba(5,13,26,0.98) 0%,transparent 100%);
+  transition:background 0.4s;
+}
+nav.scrolled { background:rgba(5,13,26,0.98); border-bottom:1px solid var(--teal-line); }
+.nav-logo { font-family:'Playfair Display',Georgia,serif; font-size:1.55rem; font-weight:700; letter-spacing:0.03em; color:var(--teal); text-decoration:none; }
+.nav-logo span { color:var(--white); }
+.nav-links { display:flex; gap:2.2rem; list-style:none; }
+.nav-links a { color:var(--mist); text-decoration:none; font-size:0.8rem; letter-spacing:0.14em; text-transform:uppercase; transition:color 0.2s; }
+.nav-links a:hover { color:var(--teal); }
+.nav-cta { background:transparent; border:1px solid var(--teal); color:var(--teal) !important; padding:0.5rem 1.4rem; border-radius:2px; cursor:pointer; font-family:'Raleway',sans-serif; font-size:0.78rem; letter-spacing:0.12em; text-transform:uppercase; transition:background 0.2s,color 0.2s; text-decoration:none; }
+.nav-cta:hover { background:var(--teal); color:var(--navy) !important; }
+
+#hero { min-height:100vh; display:flex; align-items:center; position:relative; overflow:hidden; padding:0 5vw; }
+.hero-bg {
+  position:absolute; top:0;right:0;bottom:0;left:0;
+  background:
+    radial-gradient(ellipse 70% 60% at 75% 50%,rgba(0,201,177,0.08) 0%,transparent 60%),
+    radial-gradient(ellipse 50% 70% at 5% 85%,rgba(212,175,106,0.06) 0%,transparent 55%),
+    radial-gradient(ellipse 80% 40% at 50% 0%,rgba(0,100,180,0.1) 0%,transparent 50%),
+    linear-gradient(175deg,#050D1A 0%,#071A2E 50%,#050D1A 100%);
+}
+.hero-grid {
+  position:absolute; top:0;right:0;bottom:0;left:0;
+  background-image:linear-gradient(rgba(0,201,177,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,201,177,0.04) 1px,transparent 1px);
+  background-size:60px 60px; pointer-events:none;
+}
+.hero-content { position:relative; z-index:2; max-width:860px; animation:fadeUp 1s ease both; }
+.hero-tag { display:inline-block; font-size:0.7rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--teal); border:1px solid var(--teal-line); padding:0.45rem 1.3rem; margin-bottom:2.4rem; border-radius:30px; background:rgba(0,201,177,0.06); animation:fadeUp 0.9s 0.1s ease both; }
+.hero-h1 { font-family:'Playfair Display',Georgia,serif; font-size:3.5rem; font-size:clamp(3.5rem,7.5vw,7rem); font-weight:900; line-height:1.02; letter-spacing:-0.02em; color:var(--white); margin-bottom:1.8rem; animation:fadeUp 0.9s 0.2s ease both; }
+.hero-h1 em { font-style:italic; color:var(--teal); }
+.hero-sub { font-size:1.08rem; line-height:1.8; color:var(--mist); max-width:540px; margin-bottom:3rem; font-weight:400; animation:fadeUp 0.9s 0.35s ease both; }
+.hero-btns { display:flex; gap:1.2rem; flex-wrap:wrap; animation:fadeUp 0.9s 0.5s ease both; }
+
+.btn-primary { background:linear-gradient(135deg,var(--teal),var(--teal-dim)); color:var(--navy); border:none; padding:1rem 2.6rem; font-family:'Raleway',Arial,sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; border-radius:3px; text-decoration:none; display:inline-block; transition:opacity 0.2s,transform 0.2s; box-shadow:0 4px 20px rgba(0,201,177,0.3); }
+.btn-primary:hover { opacity:0.88; transform:translateY(-2px); }
+.btn-email { background:linear-gradient(135deg,var(--gold),var(--gold-light)); color:var(--navy); border:none; padding:1rem 2.6rem; font-family:'Raleway',Arial,sans-serif; font-size:0.85rem; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; border-radius:3px; text-decoration:none; display:inline-block; transition:opacity 0.2s,transform 0.2s; box-shadow:0 4px 20px rgba(212,175,106,0.3); }
+.btn-email:hover { opacity:0.88; transform:translateY(-2px); }
+.btn-ghost { background:transparent; color:var(--white); border:1px solid rgba(240,246,255,0.25); padding:1rem 2.6rem; font-family:'Raleway',Arial,sans-serif; font-size:0.85rem; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; border-radius:3px; text-decoration:none; display:inline-block; transition:border-color 0.2s,color 0.2s,transform 0.2s; }
+.btn-ghost:hover { border-color:var(--teal); color:var(--teal); transform:translateY(-2px); }
+
+.hero-scroll { position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%); display:flex; flex-direction:column; align-items:center; gap:0.5rem; color:var(--teal-dim); font-size:0.65rem; letter-spacing:0.22em; text-transform:uppercase; animation:fadeUp 1s 0.8s ease both; }
+.scroll-line { width:1px; height:50px; background:linear-gradient(to bottom,var(--teal-dim),transparent); animation:scrollLine 1.8s ease-in-out infinite; }
+@keyframes scrollLine { 0%,100%{opacity:0.3;transform:scaleY(1);}50%{opacity:1;transform:scaleY(1.15);} }
+
+section { padding:7rem 5vw; }
+.section-tag { font-size:0.68rem; letter-spacing:0.25em; text-transform:uppercase; color:var(--teal); margin-bottom:1rem; }
+.section-title { font-family:'Playfair Display',Georgia,serif; font-size:2.4rem; font-size:clamp(2.4rem,4vw,4rem); font-weight:700; line-height:1.08; color:var(--white); margin-bottom:1.2rem; }
+.section-title em { font-style:italic; color:var(--teal); }
+.section-body { font-size:1rem; line-height:1.85; color:var(--mist); max-width:520px; }
+.teal-rule { width:60px; height:2px; background:linear-gradient(90deg,var(--teal),transparent); margin:1.8rem 0; }
+
+#about { background:var(--navy2); display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.about-stat-grid { display:grid; grid-template-columns:1fr 1fr; gap:3px; }
+.about-stat { background:var(--navy3); padding:2.5rem 2rem; position:relative; overflow:hidden; transition:background 0.3s; border:1px solid rgba(0,201,177,0.06); }
+.about-stat:hover { background:var(--navy4); }
+.about-stat::after { content:''; position:absolute; top:0;left:0;right:0; height:2px; background:linear-gradient(90deg,var(--teal),transparent); opacity:0; transition:opacity 0.3s; }
+.about-stat:hover::after { opacity:1; }
+.stat-num { font-family:'Playfair Display',serif; font-size:3rem; font-weight:700; color:var(--teal); line-height:1; margin-bottom:0.4rem; }
+.stat-label { font-size:0.75rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--mist-dim); }
+
+#services { background:var(--navy); }
+.services-header { display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:2rem; margin-bottom:4rem; }
+.services-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:3px; }
+
+.service-card { background:var(--navy2); padding:3rem 2.6rem 3.5rem; position:relative; overflow:hidden; cursor:pointer; border:1px solid rgba(0,201,177,0.06); transition:border-color 0.4s,transform 0.4s; }
+.service-card:hover { border-color:var(--teal); transform:translateY(-5px); }
+.card-bg { position:absolute; top:0;left:0;right:0;bottom:0; background:linear-gradient(135deg,rgba(0,201,177,0.0) 0%,rgba(0,100,180,0.0) 100%); transition:background 0.5s ease; z-index:0; }
+.service-card:hover .card-bg { background:linear-gradient(135deg,rgba(0,201,177,0.08) 0%,rgba(0,60,140,0.15) 100%); }
+.service-card.active .card-bg { background:linear-gradient(135deg,rgba(0,201,177,0.18) 0%,rgba(0,60,140,0.3) 100%); }
+.card-shimmer { position:absolute; top:-100%;left:-60%; width:60%;height:300%; background:linear-gradient(105deg,transparent 40%,rgba(0,201,177,0.12) 50%,transparent 60%); z-index:1; pointer-events:none; }
+.service-card:hover .card-shimmer { animation:shimmer 0.7s ease forwards; }
+@keyframes shimmer { 0%{left:-60%;opacity:1;}100%{left:120%;opacity:0;} }
+.service-card > *:not(.card-bg):not(.card-shimmer) { position:relative; z-index:2; }
+.service-icon { font-size:2.4rem; margin-bottom:1.6rem; display:block; transition:transform 0.3s; }
+.service-card:hover .service-icon { transform:scale(1.15) rotate(-5deg); }
+.service-name { font-family:'Playfair Display',Georgia,serif; font-size:1.65rem; font-weight:700; color:var(--white); margin-bottom:0.9rem; letter-spacing:0.02em; text-transform:uppercase; line-height:1.2; }
+.service-card:hover .service-name { color:var(--teal); }
+.service-desc { font-size:0.9rem; line-height:1.8; color:var(--mist); font-weight:400; }
+.service-cta { display:inline-block; margin-top:1.5rem; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; color:var(--teal); text-decoration:none; border-bottom:1px solid transparent; transition:border-color 0.2s; background:none; border-top:none; border-left:none; border-right:none; cursor:pointer; font-family:'Raleway',sans-serif; padding:0; }
+.service-cta:hover { border-bottom-color:var(--teal); }
+
+#why { background:var(--navy2); display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
+.why-list { list-style:none; }
+.why-item { display:flex; gap:1.2rem; padding:1.6rem 0; border-bottom:1px solid rgba(0,201,177,0.1); transition:padding-left 0.3s; }
+.why-item:hover { padding-left:0.6rem; }
+.why-num { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--teal); min-width:2.2rem; padding-top:0.1rem; }
+.why-text-title { font-size:0.95rem; font-weight:600; color:var(--white); margin-bottom:0.3rem; letter-spacing:0.04em; }
+.why-text-body { font-size:0.85rem; color:var(--mist); line-height:1.65; }
+.why-visual { position:relative; height:480px; }
+.why-box { position:absolute; border:1px solid rgba(0,201,177,0.15); }
+.why-box-1 { top:0;left:0;right:15%;bottom:15%; background:var(--navy3); display:flex; align-items:center; justify-content:center; flex-direction:column; gap:0.5rem; }
+.why-box-2 { bottom:0;right:0;width:55%;height:55%; background:var(--navy4); border-color:rgba(0,201,177,0.25); }
+.why-box-big-text { font-family:'Playfair Display',serif; font-size:5.5rem; font-weight:900; color:var(--teal); line-height:1; }
+.why-box-big-label { font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--mist-dim); text-align:center; }
+.why-box-2-inner { padding:2rem; }
+.why-box-quote { font-family:'Playfair Display',serif; font-size:1.2rem; font-style:italic; color:var(--white); line-height:1.6; }
+.why-box-quote-attr { margin-top:1rem; font-size:0.72rem; letter-spacing:0.1em; color:var(--teal); }
+.why-box-dot { position:absolute; width:8px;height:8px; background:var(--teal); border-radius:50%; }
+.dot-tl{top:-4px;left:-4px;} .dot-br{bottom:-4px;right:-4px;}
+
+#process { background:var(--navy3); }
+.process-steps { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:0; margin-top:4rem; position:relative; }
+.process-steps::before { content:''; position:absolute; top:2.5rem;left:0;right:0; height:1px; background:linear-gradient(90deg,transparent,var(--teal-dim),var(--teal-dim),transparent); opacity:0.35; }
+.process-step { padding:0 2.4rem 0 0; position:relative; }
+.step-circle { width:50px;height:50px; border-radius:50%; border:1px solid var(--teal); display:flex; align-items:center; justify-content:center; font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--teal); background:var(--navy3); margin-bottom:2rem; position:relative; z-index:1; transition:background 0.3s,color 0.3s; }
+.process-step:hover .step-circle { background:var(--teal); color:var(--navy); }
+.step-title { font-size:0.95rem; font-weight:600; color:var(--white); margin-bottom:0.6rem; letter-spacing:0.05em; }
+.step-body { font-size:0.83rem; line-height:1.75; color:var(--mist); }
+
+#testimonials { background:var(--navy2); }
+.testimonials-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:3px; margin-top:3.5rem; }
+.testimonial-card { background:var(--navy3); padding:2.8rem; position:relative; border:1px solid rgba(0,201,177,0.06); transition:background 0.3s,border-color 0.3s; }
+.testimonial-card:hover { background:var(--navy4); border-color:rgba(0,201,177,0.2); }
+.t-stars { color:var(--teal); margin-bottom:1.2rem; font-size:0.9rem; letter-spacing:0.1em; }
+.t-quote { font-family:'Playfair Display',serif; font-size:1.15rem; font-style:italic; color:var(--white); line-height:1.7; margin-bottom:1.5rem; }
+.t-name { font-size:0.82rem; font-weight:600; color:var(--teal); }
+.t-role { font-size:0.75rem; color:var(--mist-dim); margin-top:0.2rem; }
+.t-mark { position:absolute; top:1.5rem;right:2rem; font-family:'Playfair Display',serif; font-size:5rem; color:rgba(0,201,177,0.07); line-height:1; font-style:italic; }
+
+#contact { background:linear-gradient(160deg,var(--navy) 0%,var(--navy3) 100%); position:relative; overflow:hidden; }
+#contact::before { content:''; position:absolute; top:-30%;left:50%; transform:translateX(-50%); width:700px;height:700px; background:radial-gradient(circle,rgba(0,201,177,0.06),transparent 65%); pointer-events:none; }
+.contact-inner { position:relative; z-index:1; display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:start; }
+.contact-form { display:flex; flex-direction:column; gap:1.2rem; }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:1.2rem; }
+.form-group { display:flex; flex-direction:column; gap:0.45rem; }
+.form-group label { font-size:0.7rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--mist-dim); }
+.form-group input,.form-group select,.form-group textarea { background:rgba(255,255,255,0.03); border:1px solid rgba(0,201,177,0.15); color:var(--white); padding:0.9rem 1.1rem; font-family:'Raleway',sans-serif; font-size:0.9rem; border-radius:3px; outline:none; transition:border-color 0.2s,background 0.2s; resize:none; }
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus { border-color:var(--teal); background:rgba(0,201,177,0.04); }
+.form-group select option { background:#071322; color:var(--white); }
+.form-group textarea { height:120px; }
+.contact-info { padding-top:0.5rem; }
+.ci-item { display:flex; gap:1rem; margin-bottom:2rem; }
+.ci-icon { font-size:1.2rem; min-width:2rem; padding-top:0.1rem; }
+.ci-label { font-size:0.68rem; letter-spacing:0.16em; text-transform:uppercase; color:var(--teal); margin-bottom:0.2rem; }
+.ci-value { font-size:0.95rem; color:var(--white); }
+
+footer { background:var(--navy); border-top:1px solid rgba(0,201,177,0.12); padding:3rem 5vw 2rem; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.5rem; }
+.footer-logo { font-family:'Playfair Display',serif; font-size:1.25rem; color:var(--teal); font-weight:700; letter-spacing:0.04em; }
+.footer-copy { font-size:0.75rem; color:var(--mist-dim); }
+.footer-links { display:flex; gap:2rem; }
+.footer-links a { font-size:0.75rem; color:var(--mist-dim); text-decoration:none; letter-spacing:0.08em; transition:color 0.2s; }
+.footer-links a:hover { color:var(--teal); }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);} }
+.reveal { opacity:0; transform:translateY(30px); transition:opacity 0.7s ease,transform 0.7s ease; }
+.reveal.visible { opacity:1; transform:translateY(0); }
+
+/* MODAL */
+.service-modal-overlay { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(5,13,26,0.92); z-index:1000; align-items:center; justify-content:center; backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); }
+.service-modal-overlay.open { display:flex; }
+.service-modal { background:linear-gradient(145deg,var(--navy3),var(--navy4)); border:1px solid var(--teal-line); border-radius:4px; max-width:560px; width:90%; padding:3.5rem; position:relative; animation:modalIn 0.35s ease; }
+@keyframes modalIn { from{opacity:0;transform:scale(0.92) translateY(20px);}to{opacity:1;transform:scale(1) translateY(0);} }
+.modal-close { position:absolute; top:1.2rem;right:1.5rem; background:none; border:none; color:var(--mist-dim); font-size:1.5rem; cursor:pointer; line-height:1; transition:color 0.2s; }
+.modal-close:hover { color:var(--teal); }
+.modal-icon { font-size:3rem; margin-bottom:1.2rem; display:block; }
+.modal-title { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; text-transform:uppercase; color:var(--white); margin-bottom:1rem; letter-spacing:0.03em; }
+.modal-desc { font-size:0.95rem; line-height:1.85; color:var(--mist); margin-bottom:2rem; }
+.modal-cta { display:inline-block; padding:0.9rem 2.2rem; background:linear-gradient(135deg,var(--teal),var(--teal-dim)); color:var(--navy); font-family:'Raleway',sans-serif; font-size:0.8rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; text-decoration:none; border-radius:3px; border:none; cursor:pointer; box-shadow:0 4px 18px rgba(0,201,177,0.3); transition:opacity 0.2s; }
+.modal-cta:hover { opacity:0.85; }
+
+@media (max-width:768px) {
+  #about,#why,.contact-inner{grid-template-columns:1fr;gap:3rem;}
+  .form-row{grid-template-columns:1fr;}
+  .why-visual{display:none;}
+  .nav-links{display:none;}
+  .process-steps::before{display:none;}
+  footer{flex-direction:column;align-items:flex-start;}
+  .about-stat-grid{grid-template-columns:1fr 1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- MODAL -->
+<div class="service-modal-overlay" id="serviceModal">
+  <div class="service-modal">
+    <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+    <span class="modal-icon" id="modalIcon"></span>
+    <div class="modal-title" id="modalTitle"></div>
+    <p class="modal-desc" id="modalDesc"></p>
+    <a class="modal-cta" id="modalCta" href="#">Book a Consultation &rarr;</a>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a class="nav-logo" href="#">All Your <span>Needs</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact" class="nav-cta">Get Started</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <span class="hero-tag">Premier Consulting &amp; Solutions</span>
+    <h1 class="hero-h1">One Source.<br><em>Every Solution.</em></h1>
+    <p class="hero-sub">From home contracting to financial strategy — All Your Needs is your single point of contact for expert guidance, trusted professionals, and real results.</p>
+    <div class="hero-btns">
+      <a href="#services" class="btn-primary">Explore Services</a>
+      <a href="mailto:vistacoresolutions@gmail.com?subject=Consultation%20Request%20%E2%80%93%20All%20Your%20Needs&body=Hello%2C%0A%0AI%20would%20like%20to%20book%20a%20consultation.%0A%0AName%3A%0APhone%3A%0AService%20Needed%3A%0A%0ABest%20time%20to%20reach%20me%3A" class="btn-email">&#128231; Book a Consultation</a>
+    </div>
+  </div>
+  <div class="hero-scroll"><div class="scroll-line"></div><span>Scroll</span></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="reveal">
+    <p class="section-tag">Who We Are</p>
+    <h2 class="section-title">Built on Trust.<br><em>Driven by Results.</em></h2>
+    <div class="teal-rule"></div>
+    <p class="section-body">All Your Needs was founded on a simple belief: people deserve access to a full spectrum of professional services under one roof. We connect you with vetted experts in construction, finance, accounting, and beyond — so you never have to search again.</p>
+    <br/>
+    <p class="section-body">Whether you're renovating your home, filing your taxes, or planning your financial future, we have the right professional ready to serve you.</p>
+  </div>
+  <div class="about-stat-grid reveal">
+    <div class="about-stat"><div class="stat-num">12+</div><div class="stat-label">Service Categories</div></div>
+    <div class="about-stat"><div class="stat-num">500+</div><div class="stat-label">Clients Served</div></div>
+    <div class="about-stat"><div class="stat-num">98%</div><div class="stat-label">Satisfaction Rate</div></div>
+    <div class="about-stat"><div class="stat-num">15+</div><div class="stat-label">Years Experience</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="services-header reveal">
+    <div>
+      <p class="section-tag">What We Offer</p>
+      <h2 class="section-title">All Your <em>Services</em></h2>
+    </div>
+    <p style="color:var(--mist);font-size:0.9rem;max-width:320px;line-height:1.8;font-weight:400;">Click any service to learn more and book a consultation directly.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal" onclick="openModal('&#x1F3D7;','HOME CONTRACTING','Full-service home building and construction management. From foundations to finishes, we coordinate licensed contractors to bring your vision to life on time and on budget.','Home Contracting')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F3D7;</span>
+      <div class="service-name">Home Contracting</div>
+      <p class="service-desc">Full-service home building and construction management. From foundations to finishes, we coordinate licensed contractors to bring your vision to life.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+    <div class="service-card reveal" onclick="openModal('&#x1F528;','RENOVATIONS','Kitchens, bathrooms, basements, and full-scale remodels. We handle the planning, permitting, and execution — you enjoy the transformation.','Renovations')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F528;</span>
+      <div class="service-name">Renovations</div>
+      <p class="service-desc">Kitchens, bathrooms, basements, and full-scale remodels. We handle the planning, permitting, and execution — you enjoy the transformation.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+    <div class="service-card reveal" onclick="openModal('&#x1F4CB;','TAX SERVICES','Personal and business tax preparation, planning, and filing. Maximize your returns and minimize your liability with our expert tax professionals.','Tax Services')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F4CB;</span>
+      <div class="service-name">Tax Services</div>
+      <p class="service-desc">Personal and business tax preparation, planning, and filing. Maximize your returns and minimize your liability with our expert tax professionals.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+    <div class="service-card reveal" onclick="openModal('&#x1F4CA;','ACCOUNTING','Comprehensive accounting solutions for individuals and businesses. Accurate, timely, and fully compliant with all regulatory requirements.','Accounting')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F4CA;</span>
+      <div class="service-name">Accounting</div>
+      <p class="service-desc">Comprehensive accounting solutions for individuals and businesses. Accurate, timely, and fully compliant with all regulatory requirements.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+    <div class="service-card reveal" onclick="openModal('&#x1F4D2;','BOOKKEEPING','Keep your finances organized and up-to-date. We manage your books so you can focus on running your business with confidence.','Bookkeeping')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F4D2;</span>
+      <div class="service-name">Bookkeeping</div>
+      <p class="service-desc">Keep your finances organized and up-to-date. We manage your books so you can focus on running your business with confidence.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+    <div class="service-card reveal" onclick="openModal('&#x1F4BC;','BUSINESS CONSULTING','Strategic guidance for startups and established businesses alike. We help you plan, grow, and navigate challenges with proven frameworks.','Business Consulting')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F4BC;</span>
+      <div class="service-name">Business Consulting</div>
+      <p class="service-desc">Strategic guidance for startups and established businesses alike. We help you plan, grow, and navigate challenges with proven frameworks.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+    <div class="service-card reveal" onclick="openModal('&#x1F4B0;','FINANCIAL ADVICE','Personalized financial planning, investment guidance, and wealth management strategies tailored to your goals and lifestyle.','Financial Advice')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F4B0;</span>
+      <div class="service-name">Financial Advice</div>
+      <p class="service-desc">Personalized financial planning, investment guidance, and wealth management strategies tailored to your goals and lifestyle.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+    <div class="service-card reveal" onclick="openModal('&#x1F91D;','REFERRAL NETWORK','Need something we do not directly offer? We tap into our extensive network of vetted professionals to connect you with exactly the right person.','Referral Network')">
+      <div class="card-bg"></div><div class="card-shimmer"></div>
+      <span class="service-icon">&#x1F91D;</span>
+      <div class="service-name">Referral Network</div>
+      <p class="service-desc">Need something we don't directly offer? We tap into our extensive network of vetted professionals to connect you with exactly the right person.</p>
+      <button class="service-cta">Learn More &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="reveal">
+    <p class="section-tag">Why Choose Us</p>
+    <h2 class="section-title">The <em>All Your Needs</em><br>Difference</h2>
+    <div class="teal-rule"></div>
+    <ul class="why-list">
+      <li class="why-item"><span class="why-num">01</span><div><div class="why-text-title">One Relationship, Every Need</div><div class="why-text-body">Stop managing multiple vendors. We're your single point of truth for every professional service.</div></div></li>
+      <li class="why-item"><span class="why-num">02</span><div><div class="why-text-title">Vetted, Trusted Professionals</div><div class="why-text-body">Every professional in our network is rigorously screened for credentials, experience, and client satisfaction.</div></div></li>
+      <li class="why-item"><span class="why-num">03</span><div><div class="why-text-title">Transparent &amp; Honest Pricing</div><div class="why-text-body">No hidden fees, no surprises. Clear communication and upfront pricing every time.</div></div></li>
+      <li class="why-item"><span class="why-num">04</span><div><div class="why-text-title">White-Glove Client Experience</div><div class="why-text-body">From first contact to final delivery, every interaction is seamless and exceptional.</div></div></li>
+    </ul>
+  </div>
+  <div class="why-visual reveal">
+    <div class="why-box why-box-1">
+      <div class="why-box-dot dot-tl"></div><div class="why-box-dot dot-br"></div>
+      <div class="why-box-big-text">100%</div>
+      <div class="why-box-big-label">Client Commitment</div>
+    </div>
+    <div class="why-box why-box-2">
+      <div class="why-box-2-inner">
+        <div class="why-box-quote">"They handled everything — our renovation, our taxes, and our business plan. Truly one stop."</div>
+        <div class="why-box-quote-attr">— M. Thompson, Small Business Owner</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="reveal" style="max-width:560px;">
+    <p class="section-tag">How It Works</p>
+    <h2 class="section-title">Simple. <em>Seamless.</em> Done.</h2>
+  </div>
+  <div class="process-steps">
+    <div class="process-step reveal"><div class="step-circle">1</div><div class="step-title">Book a Consultation</div><p class="step-body">Reach out online or by email. Tell us what you need — no matter how big or small.</p></div>
+    <div class="process-step reveal"><div class="step-circle">2</div><div class="step-title">We Assess Your Needs</div><p class="step-body">Our team reviews your situation and matches you with the right experts from our network.</p></div>
+    <div class="process-step reveal"><div class="step-circle">3</div><div class="step-title">Receive Your Plan</div><p class="step-body">We present a clear, tailored action plan with timelines, pricing, and professional assignments.</p></div>
+    <div class="process-step reveal"><div class="step-circle">4</div><div class="step-title">We Deliver</div><p class="step-body">We execute, monitor, and follow up — ensuring every service is delivered to the highest standard.</p></div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="reveal" style="text-align:center;max-width:520px;margin:0 auto;">
+    <p class="section-tag">Client Stories</p>
+    <h2 class="section-title">What Our Clients <em>Say</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card reveal"><div class="t-mark">"</div><div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-quote">From our kitchen renovation to our corporate taxes, All Your Needs handled everything flawlessly. I can't imagine going back to juggling multiple service providers.</p><div class="t-name">Sandra &amp; James R.</div><div class="t-role">Homeowners &amp; Business Owners</div></div>
+    <div class="testimonial-card reveal"><div class="t-mark">"</div><div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-quote">Their financial consulting changed how I look at my business. They spotted opportunities my old accountant missed for years. Exceptional value and service.</p><div class="t-name">Marcus D.</div><div class="t-role">Entrepreneur &amp; Investor</div></div>
+    <div class="testimonial-card reveal"><div class="t-mark">"</div><div class="t-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p class="t-quote">I needed a contractor, a bookkeeper, and a business consultant — all within 60 days of launching. All Your Needs made it happen without missing a beat.</p><div class="t-name">Priya N.</div><div class="t-role">Startup Founder</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="reveal">
+      <p class="section-tag">Get In Touch</p>
+      <h2 class="section-title">Let's Discuss <em>Your Needs</em></h2>
+      <div class="teal-rule"></div>
+      <div class="contact-info">
+        <div class="ci-item"><div class="ci-icon">&#x1F4CD;</div><div><div class="ci-label">Location</div><div class="ci-value">Serving clients nationwide</div></div></div>
+        <div class="ci-item"><div class="ci-icon">&#x1F4DE;</div><div><div class="ci-label">Phone</div><div class="ci-value">(555) 000-0000</div></div></div>
+        <div class="ci-item"><div class="ci-icon">&#x2709;&#xFE0F;</div><div><div class="ci-label">Email</div><div class="ci-value">vistacoresolutions@gmail.com</div></div></div>
+        <div class="ci-item"><div class="ci-icon">&#x1F550;</div><div><div class="ci-label">Hours</div><div class="ci-value">Mon &ndash; Sat, 8:00 AM &ndash; 7:00 PM</div></div></div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-group"><label>First Name</label><input type="text" id="cf1" placeholder="John"/></div>
+        <div class="form-group"><label>Last Name</label><input type="text" id="cf2" placeholder="Smith"/></div>
+      </div>
+      <div class="form-group"><label>Email Address</label><input type="email" id="cf3" placeholder="john@example.com"/></div>
+      <div class="form-group"><label>Phone Number</label><input type="tel" id="cf4" placeholder="(555) 000-0000"/></div>
+      <div class="form-group">
+        <label>Service Needed</label>
+        <select id="cf5">
+          <option value="">Select a service...</option>
+          <option>Home Contracting</option><option>Renovations</option>
+          <option>Tax Services</option><option>Accounting</option>
+          <option>Bookkeeping</option><option>Business Consulting</option>
+          <option>Financial Advice</option><option>Multiple Services</option>
+          <option>Other / Not Sure</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Tell Us About Your Needs</label><textarea id="cf6" placeholder="Briefly describe what you're looking to accomplish..."></textarea></div>
+      <button class="btn-primary" style="width:100%;text-align:center;" onclick="sendInquiry()">Send My Inquiry &rarr;</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">All Your Needs</div>
+  <div class="footer-copy">&copy; 2025 All Your Needs. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#">Privacy Policy</a>
+    <a href="#">Terms of Service</a>
+    <a href="#contact">Contact</a>
+  </div>
+</footer>
+
+<script>
+  function openModal(icon, title, desc, service) {
+    document.getElementById('modalIcon').innerHTML = icon;
+    document.getElementById('modalTitle').textContent = title;
+    document.getElementById('modalDesc').textContent = desc;
+    var subject = encodeURIComponent('Inquiry: ' + service);
+    var body = encodeURIComponent('Hello,\n\nI am interested in your ' + service + ' service and would like to schedule a consultation.\n\nName:\nPhone:\nBest time to reach me:');
+    document.getElementById('modalCta').href = 'mailto:vistacoresolutions@gmail.com?subject=' + subject + '&body=' + body;
+    document.getElementById('serviceModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('serviceModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('serviceModal').addEventListener('click', function(e) { if (e.target === this) closeModal(); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeModal(); });
+
+  function sendInquiry() {
+    var first = document.getElementById('cf1').value;
+    var last  = document.getElementById('cf2').value;
+    var email = document.getElementById('cf3').value;
+    var phone = document.getElementById('cf4').value;
+    var svc   = document.getElementById('cf5').value;
+    var msg   = document.getElementById('cf6').value;
+    var subject = encodeURIComponent('All Your Needs Inquiry \u2013 ' + (svc || 'General'));
+    var body    = encodeURIComponent('Name: ' + first + ' ' + last + '\nEmail: ' + email + '\nPhone: ' + phone + '\nService: ' + svc + '\n\nMessage:\n' + msg);
+    window.location.href = 'mailto:vistacoresolutions@gmail.com?subject=' + subject + '&body=' + body;
+  }
+
+  var nav = document.getElementById('navbar');
+  window.addEventListener('scroll', function() {
+    if ((window.scrollY || window.pageYOffset) > 60) nav.classList.add('scrolled');
+    else nav.classList.remove('scrolled');
+  });
+
+  var anchors = document.querySelectorAll('a[href^="#"]');
+  for (var i = 0; i < anchors.length; i++) {
+    anchors[i].addEventListener('click', function(e) {
+      var t = document.querySelector(this.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior:'smooth', block:'start' }); }
+    });
+  }
+
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    for (var r = 0; r < reveals.length; r++) obs.observe(reveals[r]);
+  } else {
+    for (var r = 0; r < reveals.length; r++) reveals[r].classList.add('visible');
+  }
+</script>
+</body>
+</html>
